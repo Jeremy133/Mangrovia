@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/PUERTOLLANO/Desktop/Mangrovia/app/src/main/res/layout/activity_main.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/PUERTOLLANO/Desktop/Mangrovia/app/src/main/res/layout/activity_splash.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout-land/activity_monthly_data.xml" value="0.25" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout-land/item.xml" value="0.25394736842105264" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout-land/monthly_data.xml" value="0.33" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout-w1240dp/activity_about.xml" value="0.23828125" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.23828125" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout-w480dp-land/activity_monthly_data.xml" value="0.4348958333333333" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.275" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_about.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_bungalon_info.xml" value="0.33" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_home_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_info_management.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_monthly_data.xml" value="0.22" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_policy.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_protection.xml" value="0.2613214550853749" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_rehab_for_all.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_show.xml" value="0.25" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_splash.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/activity_summary.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/content_scrolling.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/data.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/item.xml" value="0.25" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/item2.xml" value="0.3217550274223035" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/monthly.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/monthly_data.xml" value="0.25" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/monthlydata.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/monthydata.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/PUERTOLLANO/Downloads/MangroveAppFinal/app/src/main/res/layout/test.xml" value="0.23157894736842105" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
