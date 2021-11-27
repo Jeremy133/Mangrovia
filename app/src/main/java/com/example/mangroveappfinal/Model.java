@@ -3,11 +3,10 @@ package com.example.mangroveappfinal;
 public class Model {
 
 
-    String Bakhaw,Pagatpat,Bungalon,Show;
+    String Bakhaw,Pagatpat,Bungalon;
 
-    public String getShow() {
-        return Show;
-    }
+
+
 
     public String getBakhaw() {
         return Bakhaw;

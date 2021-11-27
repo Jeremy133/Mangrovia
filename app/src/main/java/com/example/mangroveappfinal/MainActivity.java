@@ -3,18 +3,18 @@ package com.example.mangroveappfinal;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
-import android.hardware.camera2.TotalCaptureResult;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,13 +78,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ImageView imageView;
-    Button buclassify, opengallery, takepicture, info, savename,showdata, monthly,totaladd;
-    TextView classitext,cpagatpat,cbakhaw,cbungalon,showcount;
+    Button buclassify, opengallery, takepicture, info, savename,showdata, monthly,reset;
+    TextView classitext,cpagatpat,cbakhaw,cbungalon,showcount,showtotal;
     Uri imageuri;
+    SharedPreferences sharedPreferences;
 
 
-    private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("Users");
+    private final FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private final DatabaseReference root = db.getReference().child("Users");
 
 
     @Override
@@ -92,7 +93,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        defineValues();
+        loadValues();
+
         initializeUIElements();
+
     }
 
 
@@ -113,8 +119,9 @@ public class MainActivity extends AppCompatActivity {
         savename = findViewById(R.id.save);
         showdata = findViewById(R.id.data);
         showcount = findViewById(R.id.counter_text);
-        totaladd = findViewById(R.id.addtotal);
         monthly = findViewById(R.id.monthly_data);
+        showtotal = findViewById(R.id.total);
+        reset = findViewById(R.id.reset_data);
 
 
 
@@ -167,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
             tflite.run(inputImageBuffer.getBuffer(),outputProbabilityBuffer.getBuffer().rewind());
             showresult();
 
+
         });
 
 
@@ -213,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     //--------------------------------- Show Result -----------------------------------------------------------------------------
 
 
@@ -241,15 +250,52 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                counter1 = 0;
+                cbungalon.setText((String.valueOf(counter1)));
+                counter2 = 0;
+                cbakhaw.setText((String.valueOf(counter2)));
+                counter3 = 0;
+                cpagatpat.setText((String.valueOf(counter3)));
+
+                commitToSharedPreferences();
+
+                makeToast("Reset Successfully!");
+            }
+        });
+
         enabledDisabled();
         passData();
     }
+
+
+
     //------------------- Pass Data ---------------------
+
+    public void defineValues() {
+        sharedPreferences = getSharedPreferences("Bungalon", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Bakhaw", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Pagatpat", Context.MODE_PRIVATE);
+
+    }
+
+    public void loadValues() {
+        sharedPreferences = getSharedPreferences("Bungalon", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Bakhaw", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Pagatpat", Context.MODE_PRIVATE);
+
+    }
+
+
 
 
     public void passData(){
 
+
         savename.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
@@ -257,10 +303,12 @@ public class MainActivity extends AppCompatActivity {
 
                 int add = counter1 + counter2 + counter3;
 
+
+
                 Pagatpat = cpagatpat.getText().toString();
                 Bakhaw = cbakhaw.getText().toString();
                 Bungalon = cbungalon.getText().toString();
-                showcount.setText(String.valueOf(add));
+
 
 
                 HashMap <String, Object> userMap = new HashMap<>();
@@ -271,21 +319,25 @@ public class MainActivity extends AppCompatActivity {
                 userMap.put("Bungalon",  Bungalon);
                 userMap.put("Total", add);
 
+
+
+
                 root.child("Species Count").updateChildren(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(getApplicationContext(), "Data Saved", Toast.LENGTH_SHORT).show();
+
+
                     }
 
                 });
 
 
-
                 showdata.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         startActivity(new Intent(MainActivity.this, ShowActivity.class));
+
 
 
                         monthly.setOnClickListener(new View.OnClickListener() {
@@ -295,16 +347,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
                             }
+
 
 
                         });
 
 
+
                     }
 
 
+
                 });
+
 
 
             }
@@ -312,22 +369,64 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+            counter1 = sharedPreferences.getInt("Bungalon", 0);
+            if (counter1 == 0) {
+                cbungalon.setText("0");
+
+            } else {
+                cbungalon.setText(Integer.toString(counter1));
+
+            }
+            counter2 = sharedPreferences.getInt("Bakhaw", 0);
+            if (counter2 == 0) {
+                cbakhaw.setText("0");
+
+            } else {
+                cbakhaw.setText(Integer.toString(counter2));
+
+            }
+            counter3 = sharedPreferences.getInt("Pagatpat", 0);
+            if (counter3 == 0) {
+                cpagatpat.setText("0");
+
+            } else {
+                cpagatpat.setText(Integer.toString(counter3));
+
+            }
+
 
         if (classitext.getText().toString().equals("Pagatpat")){
-            counter3++;
+            counter3 = sharedPreferences.getInt("Pagatpat", 0);
+            counter3 += 1;
             cpagatpat.setText(Integer.toString(counter3));
+            commitToSharedPreferences();
+
         }
-        else if (classitext.getText().toString().equals("Bakhaw")){
-            counter2++;
+
+         if (classitext.getText().toString().equals("Bakhaw")){
+            counter2 = sharedPreferences.getInt("Bakhaw", 0);
+            counter2 += 1;
             cbakhaw.setText(Integer.toString(counter2));
+             commitToSharedPreferences();
         }
-        else if (classitext.getText().toString().equals("Bungalon")){
-            counter1++;
+
+         if (classitext.getText().toString().equals("Bungalon")){
+            counter1 = sharedPreferences.getInt("Bungalon", 0);
+            counter1+= 1;
             cbungalon.setText(Integer.toString(counter1));
+             commitToSharedPreferences();
         }
 
 
     }
+
+    public void commitToSharedPreferences() {
+        sharedPreferences.edit().putInt("Bungalon", counter1).apply();
+        sharedPreferences.edit().putInt("Bakhaw", counter2).apply();
+        sharedPreferences.edit().putInt("Pagatpat", counter3).apply();
+    }
+
+
 
 
 
@@ -344,10 +443,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        else if (classitext.getText().toString().equals("Bungalon")){
-            info.setEnabled(true);
-        }
-        else { info.setEnabled(false);}
+        else info.setEnabled(classitext.getText().toString().equals("Bungalon"));
 
     }
 

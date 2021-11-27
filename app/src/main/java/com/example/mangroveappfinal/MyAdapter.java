@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
@@ -38,7 +39,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         holder.Bakhaw.setText(model.getBakhaw());
         holder.Pagatpat.setText(model.getPagatpat());
         holder.Bungalon.setText(model.getBungalon());
-        holder.Show.setText(model.getShow());
+
+
+
 
 
 
@@ -51,7 +54,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView Bakhaw,Pagatpat,Bungalon, Show ;
+
+        TextView Bakhaw,Pagatpat,Bungalon;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -61,7 +65,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             Bakhaw = itemView.findViewById(R.id.bakhaw_text);
             Pagatpat = itemView.findViewById(R.id.pagatpat_text);
             Bungalon = itemView.findViewById(R.id.bungalon_text);
-            Show = itemView.findViewById(R.id.counter_text);
+
 
 
 

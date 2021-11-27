@@ -1,6 +1,8 @@
 package com.example.mangroveappfinal;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,10 +28,14 @@ public class ShowActivity extends AppCompatActivity {
     private MyAdapter adapter;
     private ArrayList<Model> list;
 
+
+
+
     public void launchMonthlyData(View v) {
         //launch a new activity
         Intent i = new Intent(this, MonthlyData.class);
         startActivity(i);
+
 
     }
 
@@ -46,6 +52,10 @@ public class ShowActivity extends AppCompatActivity {
         list = new ArrayList<>();
         adapter = new MyAdapter(this , list );
         recyclerView.setAdapter(adapter);
+
+
+
+
 
         root.addValueEventListener(new ValueEventListener() {
 
@@ -65,8 +75,14 @@ public class ShowActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-            }
+
+
+                }
+
         });
+
     }
+
+
 
 }
