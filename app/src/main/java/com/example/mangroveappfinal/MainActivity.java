@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity {
                 Pagatpat = cpagatpat.getText().toString();
                 Bakhaw = cbakhaw.getText().toString();
                 Bungalon = cbungalon.getText().toString();
-
+                showcount.setText(String.valueOf(add));
 
 
                 HashMap <String, Object> userMap = new HashMap<>();
