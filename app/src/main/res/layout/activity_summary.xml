@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bfnagd"
+    tools:context=".Summary">
+
+    <TextView
+        android:id="@+id/textView1304"
+        android:layout_width="223dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/arizonia"
+        android:text="Summary"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="55sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout9"
+        android:layout_width="418dp"
+        android:layout_height="619dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="41dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1304">
+
+        <TextView
+            android:id="@+id/textView148"
+            android:layout_width="160dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Total : "
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toStartOf="@+id/total_counter1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pagatpat_counter11" />
+
+        <EditText
+            android:id="@+id/total_counter1"
+            android:layout_width="182dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="36dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:backgroundTintMode="screen"
+            android:editable="false"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView148"
+            app:layout_constraintTop_toBottomOf="@+id/pagatpat_counter11" />
+
+        <TextView
+            android:id="@+id/textView147111"
+            android:layout_width="160dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Pagatpat"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bakhaw_counter11" />
+
+        <TextView
+            android:id="@+id/textView1461"
+            android:layout_width="160dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="19dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Bakhaw"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bungalon_counter11" />
+
+        <TextView
+            android:id="@+id/textView1451"
+            android:layout_width="160dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Bungalon"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/bungalon_counter11"
+            android:layout_width="218dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1451" />
+
+        <TextView
+            android:id="@+id/bakhaw_counter11"
+            android:layout_width="218dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1461" />
+
+        <TextView
+            android:id="@+id/pagatpat_counter11"
+            android:layout_width="218dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView147111" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

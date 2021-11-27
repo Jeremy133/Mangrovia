@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bfnagd"
+    tools:context=".Protection">
+
+    <TextView
+        android:id="@+id/textView144"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="Protection / Maintenance"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView20"
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:background="@android:drawable/screen_background_dark_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView144">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView105"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:text="     Protection and Maintenance Regular patrolling should be undertaken by the community (or LGU or school group), for seafront plantations. On the other hand, it is best that a caretaker (hired by the LGU or NGO) maintains plantations inside abandoned ponds with no organized communities, particularly while tenurial negotiations are ongoing. "
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView107"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="1) Planting is recommended in the rainy season to avoid algal blooms during the summer months. Otherwise, algae should be regularly removed using a pair of scissors. Collected algae should be placed in bags for disposal elsewhere. "
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView106"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="2) The most effective way to remove barnacles is with long-nosed pliers – do not use your bare hands as the shells have sharp edges! Rhizophora plantations are particularly prone to barnacle infestation, so a proactive solution is to avoid planting bakhaw along the seafront (where they do not belong). Otherwise, avoid monoculture plantations that are vulnerable to pests by interplanting with A. marina and/or S. alba. Because it regularly 35 sheds its bark, pagatpat S. alba is unaffected by barnacles and oysters. "
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView108"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="3) Relatively taller seedlings should be planted in seafront sites with high sediment load and in deeper water, so the higher leaves remain exposed and are less prone to gathering sediment and flooding, allowing the plants to survive. "
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView109"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="4) For protection from wave action, install barriers made of rocks or closely spaced bamboo poles. Such barriers also help to trap sediment and increase the substrate level, further enhancing plant growth. In places where erosion is a major problem, a breakwater can be constructed."
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView110"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="5) Alternatively, relatively sheltered portions of the plantation with a gentle slope have recruits washed up by the tide. The Balaring, Capiz P.O. NewBAMA installed a bamboo fence in July 2010 to keep out gleaners and other passersby from their plantation. After one year, the protected area has been colonized by ~500 A. marina wildings, now measuring ~1 m high, in an area of 0.5 ha. "
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView111"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="6) For protection from boat traffic during high tide when plants cannot be seen, NewBAMA installed floating markers made of packaging strap material attached to bamboo poles staked around the perimeter of the plantation."
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView112"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="7) If the mangrove site is far from road access, a rest house with toilet facilities and other amenities will provide planters rest from sun and shade. Such is the hut constructed by the Leganes, Iloilo LGU, which also displays the municipal ordinance that protects the mangroves and other mangrove laws."
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView113"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="8) Visit the plantation regularly to repair fences and remove debris (plastics, fish nets), filamentous algae, barnacles and sediment from leaves and stems. Gather algae, debris and trash in old plastic bags and dispose of away from the plantation.Do not throw these back into the water/planting site. Dead plants should be replaced with nursery-sourced seedlings or wilding transplants, especially in the 1st year."
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

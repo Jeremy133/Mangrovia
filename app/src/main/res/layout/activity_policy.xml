@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bfnagd"
+    tools:context=".Policy">
+
+    <TextView
+        android:id="@+id/textView79"
+        android:layout_width="135dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="POLICY"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="350dp"
+        android:layout_height="643dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@android:drawable/screen_background_dark_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView79">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView80"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="     AN ACT PROVIDING FOR THE PRESERVATION, REFORESTATION, AFFORESTATION AND SUSTAINABLE DEVELOPMENT OF MANGROVE FORESTS IN THE Philippines, PROVIDING PENALTIES THEREFOR AND FOR OTHER PURPOSES . Be it enacted by the Senate and House of Representatives of the Philippines in Congress assembled: "
+                android:textAlignment="inherit"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text='     SEC. 1. Title. - This Act shall be known as the "National Protection and Preservation of Mangrove Forest Act." '
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 2. Declaration of Policy. - It is hereby declared the policy of the State to protect and preserve the country's natural resources. Towards this end, the preservation, reforestation, afforestation and sustainable development of the mangrove forests shall be pursued through the establishment of reservation areas exclusively for mangrove trees. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView83"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text='    SEC. 3. Definition of Terms. - For purposes of this Act: (a) "Afforestation" shall refer to the planting of mangrove trees along coastal areas not previously planted with the mangrove trees. (b) "Coastal area zone" is a band of dry land and adjacent ocean space (water and submerged land) in which terrestrial processes and uses directly affect oceanic processes and uses and vice versa. Its geographic extent may include areas within a landmark limit of one (1) kilometer from the shoreline at high tide to include mangrove swamps, brackish waters, ponds, nipa swamps, estuaries, rivers, sandy 2 beaches and other areas within a seaward limit of two hundred (200) meters isobath to include coral reefs, algae flats, seagrass beds and other soft bottom areas. (c) "Mangroves" shall refer to types of forests that encompass a community of inter-tidal lands including all species of trees, shrubs, vines and herbs found on coast swamps or borders of swamps. (d) "Reservation" areas shall refer to coastal areas which have been set aside exclusively for reforestation, afforestation, conservation and preservation purposes. (e) "Reforestation" shall refer to the planting of mangrove trees along the denuded coastal areas.'
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView84"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 4. Reservation Areas. - There shall be established and set aside in all coastal areas in each municipality within the Philippines portions of land solely for the preservation, protection, reforestation, afforestation and sustainable management of mangrove forests. All existing mangrove forests shall automatically form part of the reservation areas. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView85"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 5. Establishment of the National Council for the Preservation of Mangrove Forests. - There is hereby established a National Council for the Preservation of Mangrove Forests, hereinafter referred to as the National Council, which shall be an attached agency of the Department of Environment and Natural Resources (DENR). The council shall be headed by the Secretary of the DENR who shall be the chairman of the National Council. The other members of the National Council shall be the Secretary of the Department of the Interior and Local Government; the Secretary of the Department of Agriculture; the Director of the Bureau of Fisheries and Aquatic Resources; the Director-General of the National Economic and Development Authority; the Director of the Forest Management Bureau; the Administrator of the National Mapping and Resources Information Authority; a representative from the academic and research institutions and a representative from an accredited nongovernmental organization. 3 "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView86"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 6. Powers and Functions of the National Council. - The National Council shall have the following powers and functions: (1) To prepare a comprehensive program for the preservation of the mangrove forests. For this purpose, it shall conduct studies on the system and the mode of preservation of the mangrove forest; (2) To identify and delineqte boundaries of the coastal areas which shall form part of the mangrove reservation areas; (3) To exercise control and supervision over all the local councils; (4) To promulgate the rules and regulations necessary to carry out the provisions of this Act; and (5) To provide support in the implementation of the strategic environmental plan for Palawan pursuant to Republic Act No. 7611 and such other political subdivisions as may be similarly situated. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView89"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 7. The Local Council for the Preservation of Mangrove Forests. - There shall be established a local council for the Preservation of Mangrove Forests, hereinafter referred to as the local council, for each of the municipality where a reservation area has been identified. The local council shall be composed of the DENR Regional Executive Director under whose jurisdiction the reservation area is located who shall be the chairman and the following members: a representative of the municipal government concerned; a representative from each of the barangay under whose territory the reservation area is located; a representative from an accredited nongovernmental organization and a representative from the private sector and in the Province of Palawan, the chairman of the Palawan Council for Sustainable Development, as chairman. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView91"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 8. The Powers and Functions of the Local Council. - The local council shall have the following powers and functions: (1) To implement and enforce all the programs and policies laid down by the National Council; 4 , . • (2) To carry out the general administration and day to day planning of the program; (3) To secure the reservation area from illegal and destructive activities which would endanger the successful implementation and viability of the program; and (4) To perform other powers and functions as may be designated by the National Council. In order to secure the reservation area from illegal and destructive activities, the local council and the local government under whose jurisdiction the reservation area is located shall employ the services of forest guards who shall be tasked with the responsibility to guard and police the areas. They shall have the authority to make arrests against those caught violating the provisions of this Act or the rules and regulations issued pursuant thereto. In the event that any of the forest guards are found to be guilty of nonfeasance, misfeasance or malfeasance, the forest guards concerned together with the officials of the local council and the local government, by virtue of the principle of command responsibility, shall be held liable for such violations and shall be prosecuted in accordance with the provisions of Section 9 of this Act without prejudice to any criminal liability which they may be found guilty of. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView92"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 9. Prohibited Acts. - The following acts are hereby prohibited: (a) Destruction, cutting of ‘the mangrove trees within the reservation areas; (b) Dumping of waste products within the reservation areas; (c) Construction or reclamation within the jurisdiction of the reservation areas without the necessary license, permit or authority; (d) Illegal fishing activities which will result in the damaging and destruction of the reservation areas; and (e) Other acts or activities which result in the damage and destruction of the reservation areas. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView93"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 10. Penalties. - Any person, natural or juridical, found guilty of violating any provisions of this Act, or any rules and regulations issued by the National Council, 5 shall, after due notice and public hearing by the regular courts of record, be penalized with a fine in the amount of not less than Five hundred thousand pesos (P500,000.00) but not more than One million pesos (Pi ,000,000.00), or imprisonment for not less than one (1) year but not more than six (6) years, or both, at the discretion of the Court: Provided, That if the area requires rehabilitation or restoration as determined by the court, the offender shall also be required to restore or compensate for the restoration of the damage. If the offender is an association or corporation, the president or manager shall be directly responsible for the acts of his employees and laborers. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView94"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 11. Repealing Clause. - All laws, presidential decrees, executive orders, rules and regulations or parts thereof which are inconsistent with the provisions of this Act are hereby repealed or modified accordingly. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView95"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 12. Separability Clause. - If, for any reason, any part or provision of this Act is declared unconstitutional or invalid, such parts not affected thereby shall remain in full force and effect. SEC. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView96"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     SEC. 13. Effectivity. - This Act shall take effect fifteen (15) days after its complete publication in at least two (2) newspapers of general circulation. "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView98"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="PHILIPPINE MANGROVE GREENBELT/OTHER LAWS"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView97"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     P.D. 705 (1975) Revised Forestry Code: mangrove strips in islands providing protection from high winds, typhoons shall not be alienated"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView99"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     P.D. 953 (1976) Fishpond/mangrove lease holders required to retain or replant 20-m mangrove strip along rivers, creeks"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     BFD A.O. 2 (1979) Min. 25% of total mangrove forest in given area completely protected as Mangrove Wilderness Areas"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     P.P. 2151 and 2152 (1981) Declaration of 4,326 ha mangroves as wilderness areas, 74,767 ha as forest Reserves "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:text="     MNR A.O. 42 (1986) Expansion of mangrove belt in storm surge, typhoon areas: 100 m along shorelines, 50 m along riverbanks"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView104"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="5dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="     MNR A.O. 42 (1986) Expansion of mangrove belt in storm surge, typhoon areas: 100 m along shorelines, 50 m along riverbanks"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

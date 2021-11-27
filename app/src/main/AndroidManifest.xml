@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mangroveappfinal">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon_zz"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon_zz"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity
+            android:name=".MonthlyData"
+            android:exported="true" />
+        <activity
+            android:name=".ShowActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Summary"
+            android:exported="true" />
+        <activity
+            android:name=".HomeScreen"
+            android:exported="true" />
+        <activity
+            android:name=".Protection"
+            android:exported="true" />
+        <activity
+            android:name=".Monitoring"
+            android:exported="true" />
+        <activity
+            android:name=".RehabForAll"
+            android:exported="true" />
+        <activity
+            android:name=".Rules"
+            android:exported="true" />
+        <activity
+            android:name=".StepsPactices"
+            android:exported="true" />
+        <activity
+            android:name=".Policy"
+            android:exported="true" />
+        <activity
+            android:name=".PagatpatInfo"
+            android:exported="true" />
+        <activity
+            android:name=".BakhawInfo"
+            android:exported="true" />
+        <activity
+            android:name=".About"
+            android:exported="true" />
+        <activity
+            android:name=".InfoManagement"
+            android:exported="true" />
+        <activity
+            android:name=".BungalonInfo"
+            android:exported="true" />
+        <activity
+            android:name=".Splash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
