@@ -253,7 +253,6 @@
                     android:foregroundGravity="center"
                     android:gravity="center"
                     android:text="Show Data" />
-
                 <Button
                     android:id="@+id/reset_data"
                     android:layout_width="150dp"

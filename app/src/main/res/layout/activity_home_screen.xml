@@ -64,6 +64,44 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/monthlySummary"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                android:backgroundTintMode="add"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="showSummary"
+                app:cardBackgroundColor="?android:attr/textColorTertiaryInverse"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/monthlySummaryImageView"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_centerHorizontal="true"
+                        android:paddingTop="15dp"
+                        app:srcCompat="@drawable/barchart" />
+
+                    <TextView
+                        android:id="@+id/monthlySummaryTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/monthlySummaryImageView"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/candal"
+                        android:text="Summary"
+                        android:textSize="24sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/Classify"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

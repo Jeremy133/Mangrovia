@@ -2,22 +2,23 @@ package com.example.mangroveappfinal;
 
 public class Model {
 
-
-    String Bakhaw,Pagatpat,Bungalon;
-
-
-
+    String bakhaw,pagatpat,bungalon,total;
 
     public String getBakhaw() {
-        return Bakhaw;
+        return bakhaw;
     }
 
     public String getPagatpat() {
-        return Pagatpat;
+        return pagatpat;
     }
 
     public String getBungalon() {
-        return Bungalon;
+        return bungalon;
     }
 
+    public String getTotal() {
+        if(bakhaw == null){
+            return  "";
+        }
+        return total =  Integer.parseInt(bungalon) + Integer.parseInt(pagatpat) +  Integer.parseInt(bakhaw) + "" ;   }
 }

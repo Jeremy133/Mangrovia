@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bfnagd"
+    app:circularflow_defaultRadius="@android:dimen/app_icon_size"
+    tools:context=".MonthlySummary"
+    tools:layout_editor_absoluteX="9dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="216dp"
+        android:layout_height="29dp"
+        android:layout_margin="5dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="6dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView150"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/select_year"
+                android:textColor="@color/white"
+                />
+
+            <EditText
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/choose_year"
+                android:inputType="text"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:autofillHints="2021" />
+
+            <Button
+                android:id="@+id/bakhaw"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/bakhaw"
+                android:textColor="@color/white"
+                android:background="#0E8857"
+                android:onClick="showBakhaw"
+
+                />
+            <Button
+                android:id="@+id/bungalon"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/bungalon"
+                android:textColor="@color/white"
+                android:background="#0E8857"
+                android:onClick="showBungalon"
+
+                />
+            <Button
+                android:id="@+id/pagatpat"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/pagatpat"
+                android:textColor="@color/white"
+                android:background="#0E8857"
+                android:onClick="showPagatpat"
+                />
+
+
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="@string/january"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january1"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/february"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/february"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january2"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/march"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/march"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january3"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/april"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/april"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january4"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:id="@+id/may"
+                android:textAllCaps="true"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/may"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january5"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/june"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/june"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january6"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/july"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/july"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january7"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/august"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/august"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january8"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/september"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/september"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january9"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/october"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/october"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january10"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/november"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/november"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january11"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/december"
+                android:layout_width="257dp"
+                android:layout_height="22dp"
+                android:text="@string/december"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:textAllCaps="true"
+                android:id="@+id/january12"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

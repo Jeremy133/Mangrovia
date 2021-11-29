@@ -43,7 +43,12 @@ public class HomeScreen extends AppCompatActivity {
         startActivity(i);
 
     }
+    public void showSummary(View v) {
+        //launch a new activity
+        Intent i = new Intent(this, MonthlySummary.class);
+        startActivity(i);
 
+    }
 
 
 

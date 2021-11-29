@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aguafina_script</item>
+        <item>@font/alegreya_sans_sc</item>
+        <item>@font/alegreya_sans_sc_bold</item>
+        <item>@font/alegreya_sc</item>
+        <item>@font/alegreya_sc_bold_italic</item>
+        <item>@font/alfa_slab_one</item>
+        <item>@font/allan</item>
+        <item>@font/amaranth</item>
+        <item>@font/amiko</item>
+        <item>@font/amiko_bold</item>
+        <item>@font/amita</item>
+        <item>@font/anonymous_pro_italic</item>
+        <item>@font/antic</item>
+        <item>@font/archivo_narrow</item>
+        <item>@font/arizonia</item>
+        <item>@font/average_sans</item>
+        <item>@font/bilbo</item>
+        <item>@font/bungee_inline</item>
+        <item>@font/cairo</item>
+        <item>@font/calligraffitti</item>
+        <item>@font/candal</item>
+        <item>@font/cardo</item>
+        <item>@font/dancing_script</item>
+        <item>@font/galada</item>
+        <item>@font/glass_antiqua</item>
+    </array>
+</resources>

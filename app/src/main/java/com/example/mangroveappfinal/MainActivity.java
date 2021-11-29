@@ -15,6 +15,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,14 +46,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-
 
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 1000;
     private static final int CAMERA_REQUEST_CODE = 1001;
@@ -69,23 +71,15 @@ public class MainActivity extends AppCompatActivity {
     private static final float PROBABILITY_STD = 255.0f;
     private Bitmap bitmap;
     private List<String> labels;
-
     private int counter1 = 0;
     private int counter2 = 0;
     private int counter3 = 0;
-
-
-
-
     private ImageView imageView;
-    Button buclassify, opengallery, takepicture, info, savename,showdata, monthly,reset;
-    TextView classitext,cpagatpat,cbakhaw,cbungalon,showcount,showtotal;
+    private EditText editname;
+    Button buclassify, opengallery, takepicture, info, savename,showdata,reset;
+    TextView classitext, cpagatpat, cbakhaw, cbungalon;
     Uri imageuri;
     SharedPreferences sharedPreferences;
-
-
-    private final FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private final DatabaseReference root = db.getReference().child("Users");
 
 
     @Override
@@ -97,14 +91,11 @@ public class MainActivity extends AppCompatActivity {
         defineValues();
         loadValues();
 
-        initializeUIElements();
 
+        initializeUIElements();
     }
 
-
-
-
-    //--------------------------------------------------------------------------------------------------------------
+    //-------------UI Elements----------------------------------------------------------------------
 
     private void initializeUIElements(){
         imageView = findViewById(R.id.image_view);
@@ -118,22 +109,13 @@ public class MainActivity extends AppCompatActivity {
         cbungalon = findViewById(R.id.bungalon_counter);
         savename = findViewById(R.id.save);
         showdata = findViewById(R.id.data);
-        showcount = findViewById(R.id.counter_text);
-        monthly = findViewById(R.id.monthly_data);
-        showtotal = findViewById(R.id.total);
         reset = findViewById(R.id.reset_data);
-
-
-
-
-
         opengallery.setOnClickListener(v -> {
             Intent intent=new Intent();
             intent.setType("image/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
             startActivityForResult(Intent.createChooser(intent,"Select Picture"),12);
         });
-
         takepicture.setOnClickListener(v -> {
             if (hasPermission()){
                 openCamera();
@@ -143,9 +125,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         info.setOnClickListener(v -> openInfo());
-
-
-
         try{
             tflite=new Interpreter(loadmodelfile(this));
         }catch (Exception e) {
@@ -153,34 +132,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         buclassify.setOnClickListener(v -> {
-
             int imageTensorIndex = 0;
             int[] imageShape = tflite.getInputTensor(imageTensorIndex).shape(); // {1, height, width, 3}
             imageSizeY = imageShape[1];
             imageSizeX = imageShape[2];
             DataType imageDataType = tflite.getInputTensor(imageTensorIndex).dataType();
-
             int probabilityTensorIndex = 0;
             int[] probabilityShape =
                     tflite.getOutputTensor(probabilityTensorIndex).shape(); // {1, NUM_CLASSES}
             DataType probabilityDataType = tflite.getOutputTensor(probabilityTensorIndex).dataType();
-
             inputImageBuffer = new TensorImage(imageDataType);
             outputProbabilityBuffer = TensorBuffer.createFixedSize(probabilityShape, probabilityDataType);
             probabilityProcessor = new TensorProcessor.Builder().add(getPostprocessNormalizeOp()).build();
-
             inputImageBuffer = loadImage(bitmap);
-
             tflite.run(inputImageBuffer.getBuffer(),outputProbabilityBuffer.getBuffer().rewind());
             showresult();
-
-
         });
-
-
     }
-
-
 
     //----------------------------------Load Image from trained model ----------------------------------------------------------------------------
 
@@ -200,15 +168,14 @@ public class MainActivity extends AppCompatActivity {
         return imageProcessor.process(inputImageBuffer);
     }
 
-        private TensorOperator getPreprocessNormalizeOp() {
-             return new NormalizeOp(IMAGE_MEAN, IMAGE_STD);
+    private TensorOperator getPreprocessNormalizeOp() {
+        return new NormalizeOp(IMAGE_MEAN, IMAGE_STD);
     }
-        private TensorOperator getPostprocessNormalizeOp(){
-             return new NormalizeOp(PROBABILITY_MEAN, PROBABILITY_STD);
+    private TensorOperator getPostprocessNormalizeOp(){
+        return new NormalizeOp(PROBABILITY_MEAN, PROBABILITY_STD);
     }
 
     //-------------------------------- Load tflite model -----------------------------------------------------------------------------
-
 
     private MappedByteBuffer loadmodelfile(Activity activity) throws IOException {
         AssetFileDescriptor fileDescriptor=activity.getAssets().openFd("model.tflite");
@@ -219,14 +186,9 @@ public class MainActivity extends AppCompatActivity {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY,startoffset,declaredLength);
     }
 
-
-
-
     //--------------------------------- Show Result -----------------------------------------------------------------------------
 
-
     private void showresult(){
-
         try{
             labels = FileUtil.loadLabels(this,"labels.txt");
         }catch (Exception e){
@@ -247,32 +209,25 @@ public class MainActivity extends AppCompatActivity {
                 classitext.setText(" ");
                 makeToast("Unknown Image.");
             }
-
-
         }
+
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 counter1 = 0;
-                cbungalon.setText((String.valueOf(counter1)));
+                cbungalon.setText((String.valueOf(cbungalon)));
                 counter2 = 0;
-                cbakhaw.setText((String.valueOf(counter2)));
+                cbakhaw.setText((String.valueOf(cbakhaw)));
                 counter3 = 0;
-                cpagatpat.setText((String.valueOf(counter3)));
-
-                commitToSharedPreferences();
+                cpagatpat.setText((String.valueOf(cpagatpat)));
 
                 makeToast("Reset Successfully!");
             }
         });
-
         enabledDisabled();
         passData();
     }
 
-
-
-    //------------------- Pass Data ---------------------
 
     public void defineValues() {
         sharedPreferences = getSharedPreferences("Bungalon", Context.MODE_PRIVATE);
@@ -291,109 +246,68 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    //------------------- Pass Data ---------------------
+    private DatabaseReference mDatabase;
+    private FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private DatabaseReference root = db.getReference().child("Users");
+
     public void passData(){
-
-
         savename.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-
-                String Bakhaw,Pagatpat,Bungalon;
-
-                int add = counter1 + counter2 + counter3;
-
-
-
-                Pagatpat = cpagatpat.getText().toString();
-                Bakhaw = cbakhaw.getText().toString();
-                Bungalon = cbungalon.getText().toString();
-
-
-
-                HashMap <String, Object> userMap = new HashMap<>();
-
-
-                userMap.put("Pagatpat", Pagatpat);
-                userMap.put("Bakhaw", Bakhaw);
-                userMap.put("Bungalon",  Bungalon);
-                userMap.put("Total", add);
-
-
-
-
+                String bakhaw,pagatpat,bungalon;
+                pagatpat = cpagatpat.getText().toString();
+                bakhaw = cbakhaw.getText().toString();
+                bungalon = cbungalon.getText().toString();
+                HashMap<String, Object> userMap = new HashMap<>();
+                userMap.put("pagatpat", pagatpat);
+                userMap.put("bakhaw", bakhaw);
+                userMap.put("bungalon", bungalon);
+                Date date = new Date();
+                String year = new SimpleDateFormat("yyyy").format(date);
+                String month = new SimpleDateFormat("MMMM").format(date);
+                userMap.put("year",year);
+                userMap.put("month",month);
                 root.child("Species Count").updateChildren(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(getApplicationContext(), "Data Saved", Toast.LENGTH_SHORT).show();
-
-
                     }
-
                 });
-
-
                 showdata.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         startActivity(new Intent(MainActivity.this, ShowActivity.class));
-
-
-
-                        monthly.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                startActivity(new Intent(MainActivity.this, MonthlyData.class));
-
-
-
-
-                            }
-
-
-
-                        });
-
-
-
                     }
-
-
-
                 });
-
-
-
             }
-
         });
 
 
-            counter1 = sharedPreferences.getInt("Bungalon", 0);
-            if (counter1 == 0) {
-                cbungalon.setText("0");
+        counter1 = sharedPreferences.getInt("Bungalon", 0);
+        if (counter1 == 0) {
+            cbungalon.setText("0");
 
-            } else {
-                cbungalon.setText(Integer.toString(counter1));
+        } else {
+            cbungalon.setText(Integer.toString(counter1));
 
-            }
-            counter2 = sharedPreferences.getInt("Bakhaw", 0);
-            if (counter2 == 0) {
-                cbakhaw.setText("0");
+        }
+        counter2 = sharedPreferences.getInt("Bakhaw", 0);
+        if (counter2 == 0) {
+            cbakhaw.setText("0");
 
-            } else {
-                cbakhaw.setText(Integer.toString(counter2));
+        } else {
+            cbakhaw.setText(Integer.toString(counter2));
 
-            }
-            counter3 = sharedPreferences.getInt("Pagatpat", 0);
-            if (counter3 == 0) {
-                cpagatpat.setText("0");
+        }
+        counter3 = sharedPreferences.getInt("Pagatpat", 0);
+        if (counter3 == 0) {
+            cpagatpat.setText("0");
 
-            } else {
-                cpagatpat.setText(Integer.toString(counter3));
+        } else {
+            cpagatpat.setText(Integer.toString(counter3));
 
-            }
-
+        }
 
         if (classitext.getText().toString().equals("Pagatpat")){
             counter3 = sharedPreferences.getInt("Pagatpat", 0);
@@ -403,18 +317,18 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-         if (classitext.getText().toString().equals("Bakhaw")){
+        if (classitext.getText().toString().equals("Bakhaw")){
             counter2 = sharedPreferences.getInt("Bakhaw", 0);
             counter2 += 1;
             cbakhaw.setText(Integer.toString(counter2));
-             commitToSharedPreferences();
+            commitToSharedPreferences();
         }
 
-         if (classitext.getText().toString().equals("Bungalon")){
+        if (classitext.getText().toString().equals("Bungalon")){
             counter1 = sharedPreferences.getInt("Bungalon", 0);
             counter1+= 1;
             cbungalon.setText(Integer.toString(counter1));
-             commitToSharedPreferences();
+            commitToSharedPreferences();
         }
 
 
@@ -427,32 +341,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
     //------------------------ Enable button -----------------------------------
 
     public void enabledDisabled(){
         if (classitext.getText().toString().equals("Pagatpat")){
             info.setEnabled(true);
-
         }
         else if(classitext.getText().toString().equals("Bakhaw")){
             info.setEnabled(true);
-
         }
-
-        else info.setEnabled(classitext.getText().toString().equals("Bungalon"));
-
+        else if (classitext.getText().toString().equals("Bungalon")){
+            info.setEnabled(true);
+        }
+        else { info.setEnabled(false);}
     }
-
 
     Toast t;
     private void makeToast(String s){
         if(t !=null)
             t.cancel();
-
         t = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
         t.show();
     }
@@ -462,12 +369,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == CAMERA_REQUEST_CODE){
             bitmap = (Bitmap) Objects.requireNonNull(Objects.requireNonNull(data).getExtras()).get("data");
             imageView.setImageBitmap(bitmap);
         }
-
         if(requestCode==12 && resultCode==RESULT_OK && data!=null) {
             imageuri = data.getData();
             try {
@@ -478,7 +383,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         buclassify.setEnabled(true);
-
     }
 
     //--------------------------------------------------------------------------------------------------------------

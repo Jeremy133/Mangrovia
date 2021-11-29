@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity
-            android:name=".MonthlyData"
-            android:exported="true" />
+            android:name=".MonthlySummary"
+            android:exported="false" />
         <activity
             android:name=".ShowActivity"
             android:exported="true" />
