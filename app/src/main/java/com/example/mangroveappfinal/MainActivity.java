@@ -215,11 +215,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 counter1 = 0;
-                cbungalon.setText((String.valueOf(cbungalon)));
+                cbungalon.setText((String.valueOf(counter1)));
                 counter2 = 0;
-                cbakhaw.setText((String.valueOf(cbakhaw)));
+                cbakhaw.setText((String.valueOf(counter2)));
                 counter3 = 0;
-                cpagatpat.setText((String.valueOf(cpagatpat)));
+                cpagatpat.setText((String.valueOf(counter3)));
 
                 makeToast("Reset Successfully!");
             }
@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //------------------- Pass Data ---------------------
-    private DatabaseReference mDatabase;
+
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root = db.getReference().child("Users");
 
